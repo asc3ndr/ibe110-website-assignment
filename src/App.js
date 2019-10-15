@@ -17,17 +17,19 @@ function App() {
         <NavLink exact activeClassName='active-link' to='/image'>Image</NavLink>
         <NavLink exact activeClassName='active-link' to='/eval'>Eval</NavLink>
       </nav>
-      <Switch>
-        <Route exact path='/' render={About} />
-        <Route exact path='/contact' render={Contact} />
-        <Route exact path='/image' render={Image} />
-        <Route exact path='/eval' render={Eval} />
-        <Route exact path='/board' render={() => <Board
-          nRows={5}
-          nCols={5}
-          chanceLightStartsOn={0.5}
-        />} />
-      </Switch>
+      <div className='App-content'>
+        <Switch>
+          <Route exact path='/' render={About} />
+          <Route exact path='/contact' render={Contact} />
+          <Route exact path='/image' render={Image} />
+          <Route exact path='/eval' render={Eval} />
+          <Route exact path='/board' render={() => <Board
+            nRows={5}
+            nCols={5}
+            chanceLightStartsOn={0.5}
+          />} />
+        </Switch>
+      </div>
     </div>
   );
 }
