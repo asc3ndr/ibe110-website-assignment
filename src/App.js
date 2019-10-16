@@ -28,7 +28,7 @@ function App() {
           <Route exact path='/board' render={() => <Board
             nRows={5}
             nCols={5}
-            chanceLightStartsOn={0.5}
+            nShuffles={10}
           />} />
         </Switch>
       </div>
