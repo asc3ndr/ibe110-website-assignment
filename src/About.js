@@ -10,7 +10,7 @@ function About() {
             </p>
             <h2>Assignment</h2>
             <p>
-                This website is made for the sole purpose of a university assignment, and as such it and the <em>Lights/Out</em> game are unfinished products and not at all optimized for different browsers or viewports. The page does not render well on devices with screens smaller than 768px (roughly the size of a tablet) width-wise. The page might not render at all in Internet Explorer. There is also a bug in the game logic of <em>Lights/Out</em> where the game might initialize with an unsolvable grid.
+                This website is made for the sole purpose of a university assignment, and as such it and the <em>Lights/Out</em> game are unfinished products and not at all optimized for different browsers or viewports. The page does not render well on devices with screens smaller than 768px (roughly the size of a tablet) width-wise. The page might not render at all in Internet Explorer.
             </p>
             <h2>Webpage</h2>
             <p>
