@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Route, Switch, NavLink } from 'react-router-dom'
 import './App.css';
 import About from './About'
@@ -8,15 +8,20 @@ import Image from './Image'
 import Eval from './Eval'
 
 function App() {
+  const [lightState, setLightState] = useState({ toggle: true });
+  const toggleLights = () => {
+    setLightState(lightState.toggle ? { toggle: false } : { toggle: true });
+  }
   return (
     <div className='App'>
-      <div className='App-container'>
+      <div className='App-nav-container'>
         <nav className='App-nav'>
-          <NavLink exact activeClassName='active-link' to='/board'>Play</NavLink>
-          <NavLink exact activeClassName='active-link' to='/'>About</NavLink>
-          <NavLink exact activeClassName='active-link' to='/contact'>Contact</NavLink>
-          <NavLink exact activeClassName='active-link' to='/image'>Image</NavLink>
-          <NavLink exact activeClassName='active-link' to='/eval'>Eval</NavLink>
+          <NavLink exact activeClassName={lightState.toggle ? 'active-link' : 'yellow'} className={lightState.toggle ? 'flux' : ''} to='/board'>Play</NavLink>
+          <NavLink exact activeClassName={lightState.toggle ? 'active-link' : 'yellow'} className={lightState.toggle ? 'flux' : ''} to='/'>About</NavLink>
+          <NavLink exact activeClassName={lightState.toggle ? 'active-link' : 'yellow'} className={lightState.toggle ? 'flux' : ''} to='/contact'>Contact</NavLink>
+          <NavLink exact activeClassName={lightState.toggle ? 'active-link' : 'yellow'} className={lightState.toggle ? 'flux' : ''} to='/image'>Image</NavLink>
+          <NavLink exact activeClassName={lightState.toggle ? 'active-link' : 'yellow'} className={lightState.toggle ? 'flux' : ''} to='/eval'>Eval</NavLink>
+          <NavLink id='light-toggle' className={lightState.toggle ? 'flux' : ''} onClick={() => toggleLights()} to='#'>Toggle<br />Neon</NavLink>
         </nav>
       </div>
       <div className='App-content'>
@@ -29,6 +34,7 @@ function App() {
             nRows={5}
             nCols={5}
             nShuffles={10}
+            neon={lightState.toggle}
           />} />
         </Switch>
       </div>

@@ -4,8 +4,8 @@ function Contact() {
     return (
         <div className='Contact'>
             <h1>Contact</h1>
-            <p><strong>E-mail:</strong> andreas.m.rovik@stud.himolde.no</p>
-            <p>This e-mail address is used for scholastic purposes only, please do not contact me for any other reason.</p>
+            <p><strong>E-mail:</strong><br />andreas.m.rovik@stud.himolde.no</p>
+            <p>This e-mail address is for scholastic purposes only, kindly only use it with that in mind. Thank you.</p>
         </div>
     );
 }

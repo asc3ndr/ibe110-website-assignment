@@ -3,7 +3,7 @@ import Cell from './Cell';
 import './Board.css';
 
 function Board(props) {
-  const { nRows, nCols, nShuffles } = props;
+  const { nRows, nCols, nShuffles, neon } = props;
 
   const generateState = () => {
     return {
@@ -84,20 +84,20 @@ function Board(props) {
     return (
       <div className='Board-title'>
         <div className='Board-winner'>
-          <span className='neon'>YOU</span>
-          <span className='flux'>WIN!</span>
+          <span className={neon ? 'neon' : ''}>YOU</span>
+          <span className={neon ? 'flux' : ''}>WIN!</span>
         </div>
       </div>
     );
   }
 
   return (
-    <div>
+    <div className='Board'>
       <div className='Board-title'>
-        <div className='neon'>Lights</div>
-        <div className='flux'>Out</div>
+        <div className={neon ? 'neon' : ''}>Lights</div>
+        <div className={neon ? 'flux' : ''}>Out</div>
       </div>
-      <table className='Board'>
+      <table className='Board-game'>
         <tbody>{generateBoard()}</tbody>
       </table>
     </div>
