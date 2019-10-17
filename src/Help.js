@@ -8,7 +8,7 @@ function Eval() {
                 Is the game solvable?
             </h3>
             <p>
-                It’s relatively difficult to decide if any given board is solvable (<a href='https://ida.mtholyoke.edu/xmlui/bitstream/handle/10166/693/375.pdf?sequence=1&isAllowed=y'><strong>here</strong></a>'s' some light reading on this topic) — but rest assured you <em>can</em> solve the puzzle.. Maybe you've already noticed individual cells flashing when the game component loads? A game board with all lights on is always solvable, so using this fact we can employ a crude and simple trick. The game logic simply inputs a few random moves after the component is loaded, and we have a unique, solvable board every time. It's not pretty or fancy, but it works!
+                It’s relatively difficult to decide if any given board is solvable (<a href='https://ida.mtholyoke.edu/xmlui/bitstream/handle/10166/693/375.pdf?sequence=1&isAllowed=y'><strong>here</strong></a>'s' some light reading on this topic) — but rest assured measures have been taken to make sure you <em>can</em> solve the puzzle.
             </p>
             <h3>
                 How do I win?
@@ -20,7 +20,7 @@ function Eval() {
                 Can I play with a different size grid?
             </h3>
             <p>
-                No. Although relatively simple to implement, this is only a showcase and I will not be spending time on additional features.
+                No. Although it would be relatively simple to implement, no more time will be dedicated to the game logic for this showcase.
             </p>
         </div>
     );
