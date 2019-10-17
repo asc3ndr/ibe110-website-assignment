@@ -63,15 +63,6 @@ Nav a {
   padding: 10px; 
 }
 
-.neon {
-  font-family: neon;
-  color: #FB4264;
-  text-shadow: 0 0 3vw #F40A35;
-  animation: neon 1s ease infinite;
-  -moz-animation: neon 1s ease infinite;
-  -webkit-animation: neon 1s ease infinite;
-}
-
 .flux {
   font-family: neon;
   color: #426DFB;
@@ -82,16 +73,18 @@ Nav a {
   -o-animation: flux 2s linear infinite;
 }
 
-.yellow {
-  color: #FED128;
-}
-
-.active-link {
-  color: #426DFB;
-  text-shadow: 0 0 3vw #2356FF;
+.neon {
+  font-family: neon;
+  color: #FB4264;
+  text-shadow: 0 0 3vw #F40A35;
   animation: neon 1s ease infinite;
   -moz-animation: neon 1s ease infinite;
   -webkit-animation: neon 1s ease infinite;
+  -o-animation: neon 1s ease infinite;
+}
+
+.yellow {
+  color: rgb(254, 209, 40);
 }
 
 #light-toggle {
