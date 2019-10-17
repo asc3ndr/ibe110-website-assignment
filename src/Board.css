@@ -2,6 +2,8 @@
   width:522px;
   max-width:522px;
   display: inline-block;
+  font-family: neon;
+  color: white;
 }
 
 .Board-game  {
@@ -24,8 +26,6 @@ table tr:last-child td:last-child {
 }
 
 .Board-title {
-  font-family: neon;
-  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,6 +33,24 @@ table tr:last-child td:last-child {
   font-size: 80px;
 }
 
+.Board-toggle {
+  font-size: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.Board-toggle div:hover {
+  border-bottom: 1px solid #FED128;
+  cursor: pointer;
+  margin-bottom: -1px;
+}
+
 .Board-winner {
-  font-size: 200px;
+  font-family: neon;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 150px;
 }

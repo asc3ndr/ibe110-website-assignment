@@ -3,7 +3,7 @@ import Cell from './Cell';
 import './Board.css';
 
 function Board(props) {
-  const { nRows, nCols, nShuffles, neon } = props;
+  const { nRows, nCols, nShuffles, neon, toggle } = props;
 
   const generateState = () => {
     return {
@@ -82,11 +82,9 @@ function Board(props) {
 
   if (boardState.hasWon) {
     return (
-      <div className='Board-title'>
-        <div className='Board-winner'>
-          <span className={neon ? 'neon' : ''}>YOU</span>
-          <span className={neon ? 'flux' : ''}>WIN!</span>
-        </div>
+      <div className='Board-winner'>
+        <span className={neon ? 'neon' : ''}>YOU</span>
+        <span className={neon ? 'flux' : ''}>WIN!</span>
       </div>
     );
   }
@@ -96,6 +94,9 @@ function Board(props) {
       <div className='Board-title'>
         <div className={neon ? 'neon' : ''}>Lights</div>
         <div className={neon ? 'flux' : ''}>Out</div>
+      </div>
+      <div className='Board-toggle'>
+        <div className={neon ? 'flux' : ''} onClick={() => toggle()}><strong>Toggle Grid</strong></div>
       </div>
       <table className='Board-game'>
         <tbody>{generateBoard()}</tbody>

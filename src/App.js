@@ -8,20 +8,31 @@ import Image from './Image'
 import Help from './Help'
 
 function App() {
-  const [lightState, setLightState] = useState({ toggle: true });
+  const [appState, setAppState] = useState({ neon: true, board: { rows: 5, cols: 5 } });
   const toggleLights = () => {
-    setLightState(lightState.toggle ? { toggle: false } : { toggle: true });
+    setAppState(appState.neon ? { ...appState, neon: false } : { ...appState, neon: true });
+  }
+  const toggleBoard = () => {
+    if (appState.board.rows === 5) {
+      setAppState({ ...appState, board: { rows: 3, cols: 3 } });
+    }
+    else if (appState.board.rows === 3) {
+      setAppState({ ...appState, board: { rows: 4, cols: 4 } });
+    }
+    else if (appState.board.rows === 4) {
+      setAppState({ ...appState, board: { rows: 5, cols: 5 } });
+    }
   }
   return (
     <div className='App'>
       <div className='App-nav-container'>
         <nav className='App-nav'>
-          <NavLink exact activeClassName={lightState.toggle ? 'neon' : 'yellow'} className={lightState.toggle ? 'flux' : ''} to='/board'>Play</NavLink>
-          <NavLink exact activeClassName={lightState.toggle ? 'neon' : 'yellow'} className={lightState.toggle ? 'flux' : ''} to='/help'>Help</NavLink>
-          <NavLink exact activeClassName={lightState.toggle ? 'neon' : 'yellow'} className={lightState.toggle ? 'flux' : ''} to='/'>About</NavLink>
-          <NavLink exact activeClassName={lightState.toggle ? 'neon' : 'yellow'} className={lightState.toggle ? 'flux' : ''} to='/contact'>Contact</NavLink>
-          <NavLink exact activeClassName={lightState.toggle ? 'neon' : 'yellow'} className={lightState.toggle ? 'flux' : ''} to='/image'>Image</NavLink>
-          <NavLink id='light-toggle' className={lightState.toggle ? 'flux' : ''} onClick={() => toggleLights()} to='#'>Toggle<br />Neon</NavLink>
+          <NavLink exact activeClassName={appState.neon ? 'neon' : 'yellow'} className={appState.neon ? 'flux' : ''} to='/board'>Play</NavLink>
+          <NavLink exact activeClassName={appState.neon ? 'neon' : 'yellow'} className={appState.neon ? 'flux' : ''} to='/help'>Help</NavLink>
+          <NavLink exact activeClassName={appState.neon ? 'neon' : 'yellow'} className={appState.neon ? 'flux' : ''} to='/'>About</NavLink>
+          <NavLink exact activeClassName={appState.neon ? 'neon' : 'yellow'} className={appState.neon ? 'flux' : ''} to='/contact'>Contact</NavLink>
+          <NavLink exact activeClassName={appState.neon ? 'neon' : 'yellow'} className={appState.neon ? 'flux' : ''} to='/image'>Image</NavLink>
+          <NavLink id='light-toggle' className={appState.neon ? 'flux' : ''} onClick={() => toggleLights()} to='#'>Toggle<br />Neon</NavLink>
         </nav>
       </div>
       <div className='App-content'>
@@ -30,11 +41,12 @@ function App() {
           <Route exact path='/contact' render={Contact} />
           <Route exact path='/image' render={Image} />
           <Route exact path='/help' render={Help} />
-          <Route exact path='/board' render={() => <Board
-            nRows={5}
-            nCols={5}
+          <Route exact path='/board' component={() => <Board
+            nRows={appState.board.rows}
+            nCols={appState.board.cols}
             nShuffles={10}
-            neon={lightState.toggle}
+            neon={appState.neon}
+            toggle={toggleBoard}
           />} />
         </Switch>
       </div>
