@@ -17,6 +17,25 @@ function Help() {
                 Yes! Simply click the 'Toggle Grid' button underneath the title of the gameboard to cycle between 3x3, 4x4, and 5x5 grids.
             </p>
             <h3>
+                What's the difficulty level of the various grids?
+            </h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Beginner</th>
+                        <th>Intermediate</th>
+                        <th>Hard</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>4x4</td>
+                        <td>3x3</td>
+                        <td>5x5</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>
                 Is the game solvable?
             </h3>
             <p>
